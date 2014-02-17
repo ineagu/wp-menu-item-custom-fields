@@ -5,6 +5,10 @@
  *
  * We're separating this class from the plugin file because Walker_Nav_Menu_Edit
  * is only loaded on the wp-admin/nav-menus.php page.
+ *
+ * @package Menu_Item_Custom_Fields
+ * @version 0.1.0
+ * @author Dzikri Aziz <kvcrvt@gmail.com>
  */
 
 /**

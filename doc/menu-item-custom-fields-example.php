@@ -25,11 +25,13 @@
  *
  * This class demonstrate the usage of Menu Item Custom Fields in plugins/themes.
  *
- *
  * @since 0.1.0
  */
 class Menu_Item_Custom_Fields_Example {
 
+	/**
+	 * Initialize plugin
+	 */
 	public static function init() {
 		add_action( 'menu_item_custom_fields', array( __CLASS__, '_fields' ), 10, 3 );
 		add_action( 'wp_update_nav_menu_item', array( __CLASS__, '_save' ), 10, 3 );
