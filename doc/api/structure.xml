@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project title="Menu Item Custom Fields" version="2.2.0&#10;">
+  <partials/>
+  <file path="menu-item-custom-fields.php" generated-path="menu-item-custom-fields.html" hash="823e3656c2bb0744bc080ad8a698820c" package="Menu_Item_Custom_Fields">
+    <docblock line="0">
+      <description>Menu Item Custom Fields</description>
+      <long-description></long-description>
+      <tag name="package" line="0" description="Menu_Item_Custom_Fields"/>
+      <tag name="version" line="0" description="0.1.0"/>
+      <tag name="author" line="0" description="Dzikri Aziz &lt;kvcrvt@gmail.com&gt;&#10;Plugin name: Menu Item Custom Fields&#10;Plugin URI: https://github.com/kucrut/wp-menu-item-custom-fields&#10;Description: Easily add custom fields to nav menu items&#10;Version: 0.1.0&#10;Author: Dzikri Aziz&#10;Author URI: http://kucrut.org/&#10;License: GPLv2&#10;Text Domain: menu-item-custom-fields"/>
+    </docblock>
+    <function namespace="" line="39" package="Menu_Item_Custom_Fields">
+      <name>_menu_item_custom_fields_walker</name>
+      <full_name>\_menu_item_custom_fields_walker()</full_name>
+      <docblock line="39">
+        <description>Replace default menu editor walker with ours</description>
+        <long-description>We don't actually replace the default walker. We're still using it and
+only injecting some HTMLs.</long-description>
+        <tag name="since" line="39" description="0.1.0"/>
+        <tag name="access" line="39" description="private"/>
+        <tag name="wp_hook" line="39" description="filter wp_edit_nav_menu_walker"/>
+        <tag name="param" line="39" description="&lt;p&gt;Walker class name&lt;/p&gt;" type="string" variable="$walker">
+          <type>string</type>
+        </tag>
+        <tag name="return" line="39" description="Walker class name" type="string">
+          <type>string</type>
+        </tag>
+      </docblock>
+      <argument line="0" by_reference="false">
+        <name>$walker</name>
+        <default></default>
+        <type>string</type>
+      </argument>
+    </function>
+    <source>eJyNVE1v00AQPce/YpCQnEbYLhzdClKRFiKlqKoKPa6W9SZeYu+a/XDaIP47M958cCDAydLumzfvvZn15buu7pKkmEwSmMCt1AHmXrbwPjhvWrhRsqkcXtHttONizVdygDGCsQhjBxhMe2mdMhrO89f5+XDCg6+NhdlWra2Cq63awuW6F7b301XLVZML077dtbhrwkpp0LyV5V/U7HGf7+cl1N53riyKlfJ1+EpsxToIG3yx6bIWOTKFHJkYOLLlgWMmnbCq86i2hGvuVPMMvKogAiECwRtU0wPxAPEMpV+iyfLo8mowWf7u8nh81Ikyo7bc2FVBiIUSUjt0++Fu0b+hkwf55GFmMBpscFp/QVODT8bXSq9IZmUAc/e1hKU12mdSV4RSSxjDC1CO8apVenwGZ/AjGVnpg9UXyc9kj1gGLSgMJp+U824MKaPujLqz2J3F7mzDm7W0KUSuZETrM0Lp97JruJBQySUPjY+pyUp5zCDWwAanBCZYRwVD0SPijU49cOEDb3AKdkdDXvZUsTxHdGolOK+aBoIj6wordTVQGY3VSn+TaARvnGklfHy4Xbj80G2KNUgNu9ENR1wI6RxAZ1XPvYyHm47VxqxxDxpPujtGRhguQ4wlCorYjlveIqfzlvq+3Hl9jB/RcGSnnY7oGP0B/UdUkYz284B/jGF86DcMFif7PSgrmSGflbJEOQbGbuaLa8YQlENaxIoM3cQnQt5y/BWkFwPDIDA98c5ZVExQ3J4RvhkWQ8KVORFT+up/tom28RciL3+7</source>
+  </file>
+  <file path="walker-nav-menu-edit.php" generated-path="walker-nav-menu-edit.html" hash="5c043d2d598e28c413fa128a7f9c7397" package="Menu_Item_Custom_Fields">
+    <docblock line="0">
+      <description>Custom Walker for Nav Menu Editor</description>
+      <long-description>We're separating this class from the plugin file because Walker_Nav_Menu_Edit
+is only loaded on the wp-admin/nav-menus.php page.</long-description>
+      <tag name="package" line="0" description="Menu_Item_Custom_Fields"/>
+      <tag name="version" line="0" description="0.1.0"/>
+      <tag name="author" line="0" description="Dzikri Aziz" link="mailto:kvcrvt@gmail.com"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="21" package="Menu_Item_Custom_Fields">
+      <extends>\Walker_Nav_Menu_Edit</extends>
+      <name>Menu_Item_Custom_Fields_Walker</name>
+      <full_name>\Menu_Item_Custom_Fields_Walker</full_name>
+      <docblock line="21">
+        <description>Menu item custom fields walker</description>
+        <long-description>Based on {@link https://twitter.com/westonruter Weston Ruter}'s {@link https://gist.github.com/3802459 gist}</long-description>
+        <tag name="since" line="21" description="0.1.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="" line="37" package="Menu_Item_Custom_Fields">
+        <name>start_el</name>
+        <full_name>\Menu_Item_Custom_Fields_Walker::start_el()</full_name>
+        <docblock line="37">
+          <description>Start the element output.</description>
+          <long-description>We're injecting our custom fields after the div.submitbox</long-description>
+          <tag name="see" line="37" description="" link="\Walker_Nav_Menu::start_el()"/>
+          <tag name="since" line="37" description="0.1.0"/>
+          <tag name="param" line="37" description="&lt;p&gt;Passed by reference. Used to append additional content.&lt;/p&gt;" type="string" variable="$output">
+            <type>string</type>
+          </tag>
+          <tag name="param" line="37" description="&lt;p&gt;Menu item data object.&lt;/p&gt;" type="object" variable="$item">
+            <type>object</type>
+          </tag>
+          <tag name="param" line="37" description="&lt;p&gt;Depth of menu item. Used for padding.&lt;/p&gt;" type="int" variable="$depth">
+            <type>int</type>
+          </tag>
+          <tag name="param" line="37" description="&lt;p&gt;Menu item args.&lt;/p&gt;" type="array" variable="$args">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="37" description="&lt;p&gt;Nav menu ID.&lt;/p&gt;" type="int" variable="$id">
+            <type>int</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="true">
+          <name>$output</name>
+          <default></default>
+          <type>string</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$item</name>
+          <default></default>
+          <type>object</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$depth</name>
+          <default>0</default>
+          <type>int</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$args</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$id</name>
+          <default>0</default>
+          <type>int</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="" line="63" package="Menu_Item_Custom_Fields">
+        <name>get_fields</name>
+        <full_name>\Menu_Item_Custom_Fields_Walker::get_fields()</full_name>
+        <docblock line="63">
+          <description>Get custom fields</description>
+          <long-description></long-description>
+          <tag name="access" line="63" description="protected"/>
+          <tag name="since" line="63" description="0.1.0"/>
+          <tag name="uses" line="63" description="Calls 'menu_item_custom_fields' hook" link="add_action()"/>
+          <tag name="param" line="63" description="&lt;p&gt;Menu item data object.&lt;/p&gt;" type="object" variable="$item">
+            <type>object</type>
+          </tag>
+          <tag name="param" line="63" description="&lt;p&gt;Depth of menu item. Used for padding.&lt;/p&gt;" type="int" variable="$depth">
+            <type>int</type>
+          </tag>
+          <tag name="param" line="63" description="&lt;p&gt;Menu item args.&lt;/p&gt;" type="array" variable="$args">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="63" description="&lt;p&gt;Nav menu ID.&lt;/p&gt;" type="int" variable="$id">
+            <type>int</type>
+          </tag>
+          <tag name="return" line="63" description="Form fields" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$item</name>
+          <default></default>
+          <type>object</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$depth</name>
+          <default></default>
+          <type>int</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$args</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$id</name>
+          <default>0</default>
+          <type>int</type>
+        </argument>
+      </method>
+    </class>
+    <source>eJy9Vdtu2kAQfcZfMY1QgZTY9Ca1NKS0JKny0LTqRXmIEmuxB3uL7bV21+Sm/Htndw0BGpRUlcqLveuZMzPnnF1235dp6XnB9rYH2zCqlBY5nLBsihImQsIxm8FnLCo4iLkWkoJM3Am2JILCkkmmeZGATrmCKGNKwUQSgk4RyqxKeAETniGMMWKVwho5JNTQoIYG1QBStiiyK8gEizGmd4twUe6wOOdFULDZTk7xyqduoWQJ+nUnw5JFU1rbJsMjjXnohggPOWaxsjEzlIoTZs9/7vfsDqt0StPtX/Op5PDhml/D7nQWyZkeJjnjmR+JfI8igwU1lgRO+BA5kiYWHy7sRHU3H5ly3d8MM15MIdW6VP0g0Bdca5QGNbhASi9kRWvi0bzDN7O4ban1tIQr7Sdcp9XYpr5803vx6vVbMPu3cwIULyJcjBZ4ToUNdIS1tHipsaDu79MDbjyvYaZuEPx3zaS2YmCGJIEGUemy0r75aiOcF3jxCyNrBVHJNYrYxMxqMGI+81U1zrkei8sFwlDhH87o95WpHGLW7tRBS3MuMo0Bc1BamspN1xp8JQJIhvEVSJygRMrz4afZ0gJYWdLkwGKalDzBMohEQWS4ieaIYmzGgaYVHJbEj5lm9deVBE7M0K8ZY6lTgH37EBPI55l1B+ZMlaZ4kazkMynZFeUzmaiVgmbj3ko8Ng97QG2Ro30bFniNSVVEZjZYUAhPa266bqTuvNEB9Lp10YHrod3pWmz6Ah2yQqNhM8Ka2wG0Wu9ok3ohzpZUguWwtTJ1CQfcMelzqfwBlBKTUGKZsQjb9KkRBHD85cdBH0YpRlN3tVAMXtZXC8/RCGmeT0x8K2i/H+yStU7P986eWfsPtk7Pt862F1brBK2uCW0asJ29BHXovNm+t1HouOiliWhtGr/1ls7GJ9SrTr/zJYsipFNYSqHJKRjfa2EY0pWojBVDZgVrd2DEskxByyga2vKuQN1uC1Ihpuv2XzXr//bqo6267lQXKVFXspgf4UMhl8kkMy8ohIWtH5Rvo5XFOLSGbZOWtLRCzpXMN1zw1nTuv0wFdInlqGySy1zV9G77b5T5Z2ker80jxbmbY1We0arbnUKNWMz9u9m4D9wIhFJXIomMvlGGrGi7I3fr/Qb2sqz5</source>
+  </file>
+  <file path="doc/menu-item-custom-fields-example.php" generated-path="doc.menu-item-custom-fields-example.html" hash="ebf39cda747c0ceac15925b0aec00f54" package="Menu_Item_Custom_Fields">
+    <docblock line="0">
+      <description>Menu item custom fields example</description>
+      <long-description>Copy this file into your wp-content/mu-plugins directory.</long-description>
+      <tag name="package" line="0" description="Menu_Item_Custom_Fields"/>
+      <tag name="version" line="0" description="0.1.0"/>
+      <tag name="author" line="0" description="Dzikri Aziz &lt;kvcrvt@gmail.com&gt;&#10;Plugin name: Menu Item Custom Fields Example&#10;Plugin URI: https://github.com/kucrut/wp-menu-item-custom-fields&#10;Description: Example usage of Menu Item Custom Fields in plugins/themes&#10;Version: 0.1.0&#10;Author: Dzikri Aziz&#10;Author URI: http://kucrut.org/&#10;License: GPL v2&#10;Text Domain: my-plugin"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="" line="30" package="Menu_Item_Custom_Fields">
+      <extends/>
+      <name>Menu_Item_Custom_Fields_Example</name>
+      <full_name>\Menu_Item_Custom_Fields_Example</full_name>
+      <docblock line="30">
+        <description>Sample menu item metadata</description>
+        <long-description>This class demonstrate the usage of Menu Item Custom Fields in plugins/themes.</long-description>
+        <tag name="since" line="30" description="0.1.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="" line="35" package="Menu_Item_Custom_Fields">
+        <name>init</name>
+        <full_name>\Menu_Item_Custom_Fields_Example::init()</full_name>
+        <docblock line="35">
+          <description>Initialize plugin</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="" line="51" package="Menu_Item_Custom_Fields">
+        <name>_save</name>
+        <full_name>\Menu_Item_Custom_Fields_Example::_save()</full_name>
+        <docblock line="51">
+          <description>Save custom field value</description>
+          <long-description></long-description>
+          <tag name="wp_hook" line="51" description="action wp_update_nav_menu_item"/>
+          <tag name="param" line="51" description="&lt;p&gt;Nav menu ID&lt;/p&gt;" type="int" variable="$menu_id">
+            <type>int</type>
+          </tag>
+          <tag name="param" line="51" description="&lt;p&gt;Menu item ID&lt;/p&gt;" type="int" variable="$menu_item_db_id">
+            <type>int</type>
+          </tag>
+          <tag name="param" line="51" description="&lt;p&gt;Menu item data&lt;/p&gt;" type="array" variable="$menu_item_args">
+            <type>array</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$menu_id</name>
+          <default></default>
+          <type>int</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$menu_item_db_id</name>
+          <default></default>
+          <type>int</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$menu_item_args</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="" line="83" package="Menu_Item_Custom_Fields">
+        <name>_fields</name>
+        <full_name>\Menu_Item_Custom_Fields_Example::_fields()</full_name>
+        <docblock line="83">
+          <description>Print field</description>
+          <long-description></long-description>
+          <tag name="param" line="83" description="&lt;p&gt;Menu item data object.&lt;/p&gt;" type="object" variable="$item">
+            <type>object</type>
+          </tag>
+          <tag name="param" line="83" description="&lt;p&gt;Depth of menu item. Used for padding.&lt;/p&gt;" type="int" variable="$depth">
+            <type>int</type>
+          </tag>
+          <tag name="param" line="83" description="&lt;p&gt;Menu item args.&lt;/p&gt;" type="array" variable="$args">
+            <type>array</type>
+          </tag>
+          <tag name="param" line="83" description="&lt;p&gt;Nav menu ID.&lt;/p&gt;" type="int" variable="$id">
+            <type>int</type>
+          </tag>
+          <tag name="return" line="83" description="Form fields" type="string">
+            <type>string</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$item</name>
+          <default></default>
+          <type>object</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$depth</name>
+          <default></default>
+          <type>int</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$args</name>
+          <default>array()</default>
+          <type>array</type>
+        </argument>
+        <argument line="0" by_reference="false">
+          <name>$id</name>
+          <default>0</default>
+          <type>int</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="" line="106" package="Menu_Item_Custom_Fields">
+        <name>_columns</name>
+        <full_name>\Menu_Item_Custom_Fields_Example::_columns()</full_name>
+        <docblock line="106">
+          <description>Add our field to the screen options toggle</description>
+          <long-description>To make this work, the field wrapper must have the class 'field-custom'</long-description>
+          <tag name="param" line="106" description="&lt;p&gt;Menu item columns&lt;/p&gt;" type="array" variable="$columns">
+            <type>array</type>
+          </tag>
+          <tag name="return" line="106" description="" type="array">
+            <type>array</type>
+          </tag>
+        </docblock>
+        <argument line="0" by_reference="false">
+          <name>$columns</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+    </class>
+    <source>eJydVlFP4zgQfm5+xVzUVQpqE9h72m5bQPT2hMTdoQPuBSHLTdzG1yS2HKdsOfHfb2wnaWkpSCChtvb4m2++mfF4dCZT6UXHxx4cwx+sqIBrlkNclVrkMOcsS0pgP2kuM4YmxupSyDXolJe4nTHghRawFpWCJzmIRaFZoaO8GsisWvCihIQrFmuh1mF9/lzSeEkXzLojV+iOXFp35Id1Z21WTJVcFHASnoYndoVWOhUKps98qThcPPNnGC1XsVrp80VOeRbGIp84F8b+xrqHguZs6AIznsB5AucJfmsDa+zv/74aQqq1LIdRtOA6rWYGOFpWsap0hCHmiDUwIg2cSIN5y3rKylhxqZH4sMGGqjSxivlBEui11irSKcuZhfrHxT/cCHBh4x9uC7BZ3vBG2o5rKNQiMhbXPGZFiSr8fnMNq69m6Y791DAVKBt6yNd1rnAn8rymGG4d/bytiZxpmlBNa4HvTAXEGS0xxSwXRakV1QwL4zMht7VR8iJmbdCR5xwcqBTSaPyf53UM7Q5CXBVcc5rxZ1b7MKuR15HVLOMxlJpq/JhXRWzyhFS47h0hQqdDk4RQu9qDwMRNTNzEpZm4NAd9oErRdQ8Iuby+uL0lpA9BswlHfTg96cOvcPR9F/BJkkqifowUdEVa+AOAJV2xt+Cw5TRThh8tUGSDZSuyJLHIqrw4RLDZNZDfvlm8F29LtVv096rrYUWzipk9u3+O9FMhluDigQPRbOwlVTQ3lwMAdN1+As3fn3TlCutqetDaSJ/MzKnNtfTa3Ma5bU7VooQtc1ut72bf6txrCfb3nPf38F2txCmLl4QmOS+IYnOmbFKcJINGEszF1pK7OQqBBR6YBCBKFKHwpl6fUekOn0MPfgGWS43p65Kbv27vHoK375vg8WFfqEck5+gZ5KmAUuSYVUO1hBQ5hmFoNrs2tzD+lA9TiS/4z7KSOV8tXBC4TRfZvY18Py5n3TKty0iKUhNzxfTeyMEhgv0WbZ9VwjL2WdwW71WP3ChToNZit87F7F8cctC1ZbdTgfVmuF/p0E2Y1Cng4DAfeGG2t20I9yVLYI5Xu8S+58Ui3C996O5WvPn9piPXfFt9F25CUExXqsDewPgW8EOoZvB/0DvOqOei7tfB9GtS4/oawvvGOB/DSZ3ws4nJzki62TH2LUotP06SdoJufx888YT59mBnlNEZy4wyY58lXB8YyIORedkAi1MBCESo1qqmOphcTZHM2cSfOCOCV0CwPaFM47ZjMbC2o5mCyDHouFPSlMO855Y6wYgXstKg15KNfY0D1ndX6Nj/ctotffsSGftvk3348rWbPPqNJCbaOdUQi4TBOzH6wJP3RTC4/iTo1yQ3QiyYftUajS7v9ZpWrm8btPaQ+21UchmKbIpcniNpPq1iO+10kSRgno1u3OAj0jwdMOWMFSBs2ktcXSyyzRS6E5DTJXOvzyehln17yCE8KSolU5Aja0jNPDN77gERbFdZsNu99SCpZ+T2M9itvGoTa/xBZ9TnehtMV/vNz4egZvKIjUHIB9VnR0XtvUGw8/vF++BhNBy65813739hBLup</source>
+  </file>
+  <package name="Menu_Item_Custom_Fields" full_name="Menu_Item_Custom_Fields"/>
+  <namespace name="global" full_name="global"/>
+  <deprecated count="0"/>
+</project>
