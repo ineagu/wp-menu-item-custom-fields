@@ -7,7 +7,7 @@
  * Version: 0.1.0
  * Author: Dzikri Aziz
  * Author URI: http://kucrut.org/
- * License: GPL v2
+ * License: GPLv2
  * Text Domain: menu-item-custom-fields
  */
 
