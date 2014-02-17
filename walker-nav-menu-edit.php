@@ -54,7 +54,7 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 	 * @uses add_action() Calls 'menu_item_custom_fields' hook
 	 *
 	 * @param object $item  Menu item data object.
-	 * @param int    $depth Menu item depth level.
+	 * @param int    $depth  Depth of menu item. Used for padding.
 	 * @param array  $args  Menu item args.
 	 * @param int    $id    Nav menu ID.
 	 *
@@ -69,7 +69,7 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 		 * @since 0.1.0
 		 *
 		 * @param object $item  Menu item data object.
-		 * @param int    $depth Menu item depth level.
+		 * @param int    $depth  Depth of menu item. Used for padding.
 		 * @param array  $args  Menu item args.
 		 * @param int    $id    Nav menu ID.
 		 *

@@ -74,7 +74,7 @@ class Menu_Item_Custom_Fields_Example {
 	 * Print field
 	 *
 	 * @param object $item  Menu item data object.
-	 * @param int    $depth Nav menu depth.
+	 * @param int    $depth  Depth of menu item. Used for padding.
 	 * @param array  $args  Menu item args.
 	 * @param int    $id    Nav menu ID.
 	 *
