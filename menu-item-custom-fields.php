@@ -2,7 +2,7 @@
 
 /**
  * Plugin name: Menu Item Custom Fields
- * Plugin URI: http://kucrut.org/
+ * Plugin URI: https://github.com/kucrut/wp-menu-item-custom-fields
  * Description: Easily add custom fields to nav menu items
  * Version: 0.1.0
  * Author: Dzikri Aziz
