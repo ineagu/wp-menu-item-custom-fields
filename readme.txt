@@ -4,7 +4,7 @@ Donate Link: http://kucrut.org/#coffee
 Tags: menu, nav-menu, custom-fields, metadata
 Requires at least: 3.8
 Tested up to: 3.8.1
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,5 +38,8 @@ Copy (and customize) and include the `menu-item-custom-fields-example.php` file 
 
 
 == Changelog ==
+= 0.1.1 =
+* Move custom fields up (before `<p.field-move />`)
+
 = 0.1.0 =
 * Initial public release

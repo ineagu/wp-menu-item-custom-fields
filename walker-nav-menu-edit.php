@@ -7,7 +7,7 @@
  * is only loaded on the wp-admin/nav-menus.php page.
  *
  * @package Menu_Item_Custom_Fields
- * @version 0.1.0
+ * @version 0.1.1
  * @author Dzikri Aziz <kvcrvt@gmail.com>
  */
 

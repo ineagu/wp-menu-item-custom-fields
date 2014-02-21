@@ -7,7 +7,7 @@ Easily add custom fields to nav menu items.
 **Tags:** [menu](http://wordpress.org/plugins/tags/menu), [nav-menu](http://wordpress.org/plugins/tags/nav-menu), [custom-fields](http://wordpress.org/plugins/tags/custom-fields), [metadata](http://wordpress.org/plugins/tags/metadata)  
 **Requires at least:** 3.8  
 **Tested up to:** 3.8.1  
-**Stable tag:** 0.1.0  
+**Stable tag:** 0.1.1  
 **License:** [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)  
 **Donate Link:** http://kucrut.org/#coffee  
 
@@ -34,10 +34,13 @@ add_action( 'load-nav-menus.php', 'myplugin_load_menu_item_custom_fields' ) );
 ```
 
 ### Usage ###
-Copy (and customize) and include the `menu-item-custom-fields-example.php` file found in the `doc/` directory into your plugin/theme.
+Copy (and customize) and include the `menu-item-custom-fields-example.php` file found in the `doc/` directory of this plugin into your plugin/theme.
 
 
 ## Changelog ##
+
+### 0.1.1 ###
+* Move custom fields up (before `<p.field-move />`)
 
 ### 0.1.0 ###
 * Initial public release
