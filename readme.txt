@@ -3,8 +3,8 @@ Contributors: kucrut
 Donate Link: http://kucrut.org/#coffee
 Tags: menu, nav-menu, custom-fields, metadata
 Requires at least: 3.8
-Tested up to: 3.8.1
-Stable tag: 0.2.0
+Tested up to: 3.9
+Stable tag: 0.2.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ Copy (and customize) and include the `menu-item-custom-fields-example.php` file 
 
 
 == Changelog ==
+= 0.2.1 =
+* Update compatibility info
+
 = 0.2.0 =
 * Improve walker class loader
 
