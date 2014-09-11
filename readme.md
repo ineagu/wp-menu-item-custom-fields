@@ -7,7 +7,7 @@ Easily add custom fields to nav menu items.
 **Tags:** [menu](http://wordpress.org/plugins/tags/menu), [nav-menu](http://wordpress.org/plugins/tags/nav-menu), [custom-fields](http://wordpress.org/plugins/tags/custom-fields), [metadata](http://wordpress.org/plugins/tags/metadata)  
 **Requires at least:** 3.8  
 **Tested up to:** 3.9  
-**Stable tag:** 0.2.1  
+**Stable tag:** 0.3.0  
 **License:** [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)  
 **Donate Link:** http://kucrut.org/#coffee  
 
@@ -25,15 +25,19 @@ Development of this plugin is done on [GitHub](https://github.com/kucrut/wp-menu
 
 ### As library in your plugin/theme ###
 Simply copy `menu-item-custom-fields` to your plugin directory and require the main plugin file, eg:
-```php
+`
 require_once dirname( __FILE__ ) . '/menu-item-custom-fields/menu-item-custom-fields.php';
-```
+`
 
 ### Usage ###
 Copy (and customize) and include the `menu-item-custom-fields-example.php` file found in the `doc/` directory of this plugin into your plugin/theme.
 
 
 ## Changelog ##
+
+### 0.3.0 ###
+* Use `wp_nav_menu_item_custom_fields` as walker hook. See this [blog post](http://shazdeh.me/2014/06/25/custom-fields-nav-menu-items/).
+* Update example plugin
 
 ### 0.2.1 ###
 * Update compatibility info

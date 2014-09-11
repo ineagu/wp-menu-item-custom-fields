@@ -4,13 +4,13 @@
  * Menu Item Custom Fields
  *
  * @package Menu_Item_Custom_Fields
- * @version 0.2.1
+ * @version 0.3.0
  * @author Dzikri Aziz <kvcrvt@gmail.com>
  *
  * Plugin name: Menu Item Custom Fields
  * Plugin URI: https://github.com/kucrut/wp-menu-item-custom-fields
  * Description: Easily add custom fields to nav menu items
- * Version: 0.2.1
+ * Version: 0.3.0
  * Author: Dzikri Aziz
  * Author URI: http://kucrut.org/
  * License: GPLv2
@@ -56,3 +56,6 @@ if ( ! class_exists( 'Menu_Item_Custom_Fields' ) ) :
 	}
 	add_action( 'wp_loaded', array( 'Menu_Item_Custom_Fields', 'load' ), 9 );
 endif; // class_exists( 'Menu_Item_Custom_Fields' )
+
+// Uncomment the following line to test this plugin
+#require_once dirname( __FILE__ ) . '/doc/menu-item-custom-fields-example.php';
