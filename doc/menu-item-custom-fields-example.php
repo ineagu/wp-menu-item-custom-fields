@@ -43,7 +43,7 @@ class Menu_Item_Custom_Fields_Example {
 	 * Initialize plugin
 	 */
 	public static function init() {
-		add_action( 'menu_item_custom_fields', array( __CLASS__, '_fields' ), 10, 3 );
+		add_action( 'wp_nav_menu_item_custom_fields', array( __CLASS__, '_fields' ), 10, 4 );
 		add_action( 'wp_update_nav_menu_item', array( __CLASS__, '_save' ), 10, 3 );
 		add_filter( 'manage_nav-menus_columns', array( __CLASS__, '_columns' ), 99 );
 
@@ -103,7 +103,7 @@ class Menu_Item_Custom_Fields_Example {
 	 *
 	 * @return string Form fields
 	 */
-	public static function _fields( $item, $depth, $args = array(), $id = 0 ) {
+	public static function _fields( $id, $item, $depth, $args ) {
 		foreach ( self::$fields as $_key => $label ) :
 			$key   = sprintf( 'menu-item-%s', $_key );
 			$id    = sprintf( 'edit-%s-%s', $key, $item->ID );

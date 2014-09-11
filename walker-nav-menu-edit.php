@@ -75,7 +75,7 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 		 *
 		 * @return string Custom fields
 		 */
-		do_action( 'menu_item_custom_fields', $item, $depth, $args, $id );
+		do_action( 'wp_nav_menu_item_custom_fields', $id, $item, $depth, $args );
 
 		return ob_get_clean();
 	}
