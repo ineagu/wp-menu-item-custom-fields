@@ -7,7 +7,7 @@
  * is only loaded on the wp-admin/nav-menus.php page.
  *
  * @package Menu_Item_Custom_Fields
- * @version 0.1.1
+ * @version 0.2.0
  * @author Dzikri Aziz <kvcrvt@gmail.com>
  */
 
@@ -27,6 +27,7 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 	 *
 	 * @see Walker_Nav_Menu::start_el()
 	 * @since 0.1.0
+	 * @since 0.2.0 Update regex pattern to support WordPress 4.7's markup.
 	 *
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @param object $item   Menu item data object.
