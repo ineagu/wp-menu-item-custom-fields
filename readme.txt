@@ -1,6 +1,6 @@
 === Menu Item Custom Fields ===
 Contributors: kucrut
-Donate Link: http://kucrut.org/#coffee
+Donate Link: https://www.paypal.me/kucrut
 Tags: menu, nav-menu, custom-fields, metadata
 Requires at least: 3.8
 Tested up to: 4.7

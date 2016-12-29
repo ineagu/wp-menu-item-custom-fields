@@ -9,7 +9,7 @@ Easily add custom fields to nav menu items.
 **Tested up to:** 4.7  
 **Stable tag:** 0.3.0  
 **License:** [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)  
-**Donate Link:** http://kucrut.org/#coffee  
+**Donate Link:** https://www.paypal.me/kucrut  
 
 ## Description ##
 
