@@ -3,7 +3,7 @@ Contributors: kucrut
 Donate Link: http://kucrut.org/#coffee
 Tags: menu, nav-menu, custom-fields, metadata
 Requires at least: 3.8
-Tested up to: 3.9
+Tested up to: 4.7
 Stable tag: 0.3.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
