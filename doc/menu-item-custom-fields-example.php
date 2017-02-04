@@ -77,16 +77,14 @@ class Menu_Item_Custom_Fields_Example {
 			if ( ! empty( $_POST[ $key ][ $menu_item_db_id ] ) ) {
 				// Do some checks here...
 				$value = $_POST[ $key ][ $menu_item_db_id ];
-			}
-			else {
+			} else {
 				$value = null;
 			}
 
 			// Update
 			if ( ! is_null( $value ) ) {
 				update_post_meta( $menu_item_db_id, $key, $value );
-			}
-			else {
+			} else {
 				delete_post_meta( $menu_item_db_id, $key );
 			}
 		}
