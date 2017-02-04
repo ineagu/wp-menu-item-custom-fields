@@ -1,0 +1,21 @@
+{
+    "name": "kucrut/menu-item-custom-fields",
+    "description": "Easily add custom fields to nav menu items.",
+    "keywords": ["wordpress", "plugin", "menu", "custom-fields"],
+    "homepage": "https://github.com/kucrut/wp-menu-item-custom-fields",
+    "license": "GPL-2.0",
+    "type": "wordpress-plugin",
+    "require": {
+      "composer/installers": "~1.0"
+    },
+    "authors": [
+        {
+            "name": "Dzikri Aziz",
+            "email": "kvcrvt@gmail.com",
+            "homepage": "https://kucrut.org/"
+        }
+    ],
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^0.10.0"
+    }
+}
