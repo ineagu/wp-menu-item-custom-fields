@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ruleset name="Icon Picker Coding Standards">
+	<config name="installed_paths" value="vendor/wp-coding-standards/wpcs" />
+
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<rule ref="WordPress-VIP">
+		<!-- ...Except for VIP-specific things -->
+		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
+		<exclude name="WordPress.VIP.FileSystemWritesDisallow" />
+		<exclude name="WordPress.VIP.RestrictedFunctions" />
+		<exclude name="WordPress.VIP.RestrictedVariables" />
+		<exclude name="WordPress.VIP.SuperGlobalInputUsage" />
+		<exclude name="WordPress.VIP.ValidatedSanitizedInput" />
+		<exclude name="WordPress.VIP.DirectDatabaseQuery" />
+	</rule>
+</ruleset>
