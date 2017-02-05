@@ -38,7 +38,7 @@ Copy (and customize) and include the `menu-item-custom-fields-example.php` file 
 
 == Changelog ==
 = 1.0.0 =
-* Pass correct parameters to the `wp_nav_menu_item_custom_fields` hook.
+* Pass correct parameters to the `wp_nav_menu_item_custom_fields` hook, props [@helgatheviking](https://github.com/helgatheviking).
 
 = 0.4.0 =
 * Support WordPress 4.7, props [rahulnever2far](https://github.com/rahulnever2far).
