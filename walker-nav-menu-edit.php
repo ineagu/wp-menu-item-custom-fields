@@ -6,17 +6,11 @@
  * We're separating this class from the plugin file because Walker_Nav_Menu_Edit
  * is only loaded on the wp-admin/nav-menus.php page.
  *
- * @package Menu_Item_Custom_Fields
- * @version 0.2.0
- * @author Dzikri Aziz <kvcrvt@gmail.com>
- */
-
-/**
- * Menu item custom fields walker
- *
  * Based on {@link https://twitter.com/westonruter Weston Ruter}'s {@link https://gist.github.com/3802459 gist}
  *
- * @since 0.1.0
+ * @package Menu_Item_Custom_Fields
+ * @version 1.0.0
+ * @author Dzikri Aziz <kvcrvt@gmail.com>
  */
 class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 
@@ -37,7 +31,9 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 	 */
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$item_output = '';
+
 		parent::start_el( $item_output, $item, $depth, $args, $id );
+
 		$output .= preg_replace(
 			// NOTE: Check this regex from time to time!
 			'/(?=<(fieldset|p)[^>]+class="[^"]*field-move)/',
@@ -54,10 +50,10 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 	 * @since 0.1.0
 	 * @uses add_action() Calls 'menu_item_custom_fields' hook
 	 *
-	 * @param object $item  Menu item data object.
+	 * @param object $item   Menu item data object.
 	 * @param int    $depth  Depth of menu item. Used for padding.
-	 * @param array  $args  Menu item args.
-	 * @param int    $id    Nav menu ID.
+	 * @param array  $args   Menu item args.
+	 * @param int    $id     Nav menu ID.
 	 *
 	 * @return string Form fields
 	 */
@@ -68,15 +64,17 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 		 * Get menu item custom fields from plugins/themes
 		 *
 		 * @since 0.1.0
+		 * @since 1.0.0 Pass correct parameters.
 		 *
-		 * @param object $item  Menu item data object.
-		 * @param int    $depth  Depth of menu item. Used for padding.
-		 * @param array  $args  Menu item args.
-		 * @param int    $id    Nav menu ID.
+		 * @param int    $item_id  Menu item ID.
+		 * @param object $item     Menu item data object.
+		 * @param int    $depth    Depth of menu item. Used for padding.
+		 * @param array  $args     Menu item args.
+		 * @param int    $id       Nav menu ID.
 		 *
-		 * @return string Custom fields
+		 * @return string Custom fields HTML.
 		 */
-		do_action( 'wp_nav_menu_item_custom_fields', $id, $item, $depth, $args );
+		do_action( 'wp_nav_menu_item_custom_fields', $item->ID, $item, $depth, $args, $id );
 
 		return ob_get_clean();
 	}
