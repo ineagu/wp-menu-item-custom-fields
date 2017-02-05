@@ -31,7 +31,9 @@ class Menu_Item_Custom_Fields_Walker extends Walker_Nav_Menu_Edit {
 	 */
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$item_output = '';
+
 		parent::start_el( $item_output, $item, $depth, $args, $id );
+
 		$output .= preg_replace(
 			// NOTE: Check this regex from time to time!
 			'/(?=<(fieldset|p)[^>]+class="[^"]*field-move)/',
